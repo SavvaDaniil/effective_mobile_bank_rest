@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/001-create-users-table.sql
+  - include:
+      file: db/migration/002-create-cards-table.sql
+  - include:
+      file: db/migration/003-create-card-transfers-table.sql
+  - include:
+      file: db/migration/004-create-card-block-requests-table.sql

@@ -1,0 +1,28 @@
+# Build artifacts
+target/
+build/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
+# Log files
+logs/
+*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependencies (if not managed by a build tool like Maven/Gradle)
+*.jar
+*.war
+*.class
