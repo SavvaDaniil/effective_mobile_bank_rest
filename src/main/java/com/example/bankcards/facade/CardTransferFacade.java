@@ -11,7 +11,7 @@ import com.example.bankcards.model.CardStatus;
 import com.example.bankcards.repository.CardRepository;
 import com.example.bankcards.repository.CardTransferRepository;
 import com.example.bankcards.repository.UserRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -35,7 +35,7 @@ public class CardTransferFacade {
      * @param cardTransferNewDTO
      * @throws NotCriticalExceptionAbstract
      */
-    @Transactional
+    @Transactional(rollbackFor = NotCriticalExceptionAbstract.class)
     public void createForOwnCards(@NotNull final String cardOwnerUsername, @NotNull final CardTransferNewDTO cardTransferNewDTO) throws NotCriticalExceptionAbstract {
 
         final BigDecimal amount = cardTransferNewDTO.getAmount().setScale(2, RoundingMode.HALF_EVEN);
