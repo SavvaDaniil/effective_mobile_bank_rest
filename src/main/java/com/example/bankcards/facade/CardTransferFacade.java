@@ -35,7 +35,7 @@ public class CardTransferFacade {
      * @param cardTransferNewDTO
      * @throws NotCriticalExceptionAbstract
      */
-    @Transactional(rollbackFor = NotCriticalExceptionAbstract.class)
+    @Transactional(rollbackFor = Exception.class)
     public void createForOwnCards(@NotNull final String cardOwnerUsername, @NotNull final CardTransferNewDTO cardTransferNewDTO) throws NotCriticalExceptionAbstract {
 
         final BigDecimal amount = cardTransferNewDTO.getAmount().setScale(2, RoundingMode.HALF_EVEN);
